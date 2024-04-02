@@ -1,0 +1,117 @@
+///INSUMOS
+
+###
+POST http://localhost:9000/api/insumos/ HTTP/1.1
+Content-Type: application/json
+
+{
+  "nombre": "Costal de mango maduro",
+  "cantidad": 3,
+  "unidadMedida": "kl"
+}
+
+### 
+GET http://localhost:9000/api/insumos HTTP/1.1
+
+
+###
+GET http://localhost:9000/api/insumos/6600def667333ae5dea83d4d HTTP/1.1
+
+
+###
+PUT  http://localhost:9000/api/insumos/660347426d759e9b3caaa0e8 HTTP/1.1
+//Content-Type: application/json
+
+
+###
+DELETE http://localhost:9000/api/insumos/66087a64ba717365abf607eb HTTP/1.1
+
+
+//////////////////////////////
+
+### crud de Productos Terminados ###
+
+### crear un producto terminado ###
+POST http://localhost:9000/api/productos-terminados HTTP/1.1
+Content-Type: application/json
+
+{
+  "numeroOrdenPedido": "12345",
+  "nombreCliente": "florecita lopez",
+  "telefono": "123456789",
+  "cedula": "122123",
+  "cantidadRequerida": 100,
+  "valorAPagar": 500
+}
+
+###
+
+POST http://localhost:9000/api/productos-terminados HTTP/1.1
+Content-Type: application/json
+
+{
+  "nombreProducto": "Crema de limon",
+  "cantidad": 10,
+  "precioUnitario": 3000
+}
+
+### obtener todos los productos terminados ###
+GET http://localhost:9000/api/productos-terminados HTTP/1.1
+
+### obtener un Producto Terminado por id ###
+GET http://localhost:9000/api/productos-terminados/  HTTP/1.1
+
+### actu un producto terminado ###
+PUT http://localhost:9000/api/productos-terminados/66087939ba717365abf607e7 HTTP/1.1
+Content-Type: application/json
+
+
+
+### eliminar un producto terminado ###
+DELETE http://localhost:9000/api/productos-terminados/ HTTP/1.1
+
+
+### crear una orden de producción ###
+POST http://localhost:9000/api/ordenes-produccion/ HTTP/1.1
+Content-Type: application/json
+
+{
+  "nombreCliente": "Julianita",
+  "telefono": "5551234",
+  "cedula": "1234567890",
+  "numeroOrdenPedido": "123456",
+  "producto": "Crema de arequipe",
+  "cantidadRequerida": 100,
+  "valorAPagar": 500
+}
+
+
+### obtener todas las ordenes de produ ##
+GET http://localhost:9000/api/ordenes-produccion HTTP/1.1
+
+### obtener una orden de produ por su id ###
+GET http://localhost:9000/api/ordenes-produccion/ HTTP/1.1
+
+### actu una orden de producción ###
+PUT http://localhost:9000/api/ordenes-produccion/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombreCliente": "Nuevo Cliente",
+    "cedula": "123456789",
+    "telefono": "987654321",
+    "productos" ""
+
+}
+
+### eliminar una orden de produ ###
+DELETE http://localhost:9000/api/ordenes-produccion/ HTTP/1.1
+
+### crud de comprobantes de venta ###
+
+### obtener ###
+GET http://localhost:9000/api/comprobantes-venta HTTP/1.1
+
+### Obtener un Comprobante de Venta por su número de pedido ###
+GET http://localhost:9000/api/comprobantes-venta/ HTTP/1.1
+
