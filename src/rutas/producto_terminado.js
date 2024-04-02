@@ -3,7 +3,7 @@ const ProductoTerminado = require('./esquema/esquema_producto_terminado');
 
 const rutas = express.Router();
 
-// crear un producto terminado
+// Crear un producto terminado
 rutas.post('/productos-terminados', async (req, res) => {
   try {
     const { nombre, cantidad, precioUnitario } = req.body;
@@ -22,7 +22,7 @@ rutas.post('/productos-terminados', async (req, res) => {
   }
 });
 
-// obtener todos los productos terminados
+// Obtener todos los productos terminados
 rutas.get('/productos-terminados', async (req, res) => {
   try {
     const productosTerminados = await ProductoTerminado.find();
@@ -32,7 +32,7 @@ rutas.get('/productos-terminados', async (req, res) => {
   }
 });
 
-// obtener un producto terminado por su id
+// Obtener un producto terminado por su ID
 rutas.get('/productos-terminados/:id', async (req, res) => {
   try {
     const productoTerminado = await ProductoTerminado.findById(req.params.id);
@@ -45,7 +45,7 @@ rutas.get('/productos-terminados/:id', async (req, res) => {
   }
 });
 
-// actu un producto terminado
+// Actualizar un producto terminado
 rutas.put('/productos-terminados/:id', async (req, res) => {
   try {
     const { nombre, cantidad, precioUnitario } = req.body;
@@ -66,7 +66,7 @@ rutas.put('/productos-terminados/:id', async (req, res) => {
   }
 });
 
-// elimi un producto terminado
+// Eliminar un producto terminado
 rutas.delete('/productos-terminados/:id', async (req, res) => {
   try {
     const productoTerminado = await ProductoTerminado.findByIdAndDelete(req.params.id);
