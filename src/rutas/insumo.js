@@ -42,8 +42,8 @@ rutas.get('/insumos/:id', async (req, res) => {
 // actu un insumo por id
 rutas.put('/insumos/:id', async (req, res) => {
   try {
-    const { nombre, cantidad, unidadMedida } = req.body;
-    const insumo = await esquema_insumo.findByIdAndUpdate(req.params.id, { nombre, cantidad, unidadMedida }, { new: true });
+    const { nombre, cantidad, unidadMedida, observaciones } = req.body;
+    const insumo = await esquema_insumo.findByIdAndUpdate(req.params.id, { nombre, cantidad, unidadMedida, observaciones }, { new: true });
     if (!insumo) {
       return res.status(404).json({ message: 'Insumo no encontrado' });
     }

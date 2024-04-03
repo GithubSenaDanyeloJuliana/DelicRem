@@ -12,6 +12,10 @@ const insumoSchema = mongoose.Schema({
     unidadMedida: {
         type: String,
         required: true
+    },
+    observaciones: {
+        type: String,
+        required: true
     }
 });
 
